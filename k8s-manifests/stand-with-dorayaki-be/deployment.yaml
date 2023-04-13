@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stand-with-dorayaki-be
+  namespace: swd
+spec:
+  selector:
+    matchLabels:
+      app: stand-with-dorayaki-be
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: stand-with-dorayaki-be
+    spec:
+      containers:
+        - name: stand-with-dorayaki-be
+          image: kadeksuryam/stand-with-dorayaki-be:v1
+          envFrom:
+            - secretRef:
+                name: swd-be-env
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/gcp-creds/creds.json
+          volumeMounts:
+            - name: gcp-creds
+              mountPath: /var/secrets/gcp-creds
+          ports:
+            - containerPort: 8080
+      volumes:
+        - name: gcp-creds
+          secret:
+            secretName: swd-be-gcloud-creds
+            items:
+            - key: project-1-dorayaki-bucket-access.json
+              path: creds.json

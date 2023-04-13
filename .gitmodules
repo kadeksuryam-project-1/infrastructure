@@ -1,0 +1,3 @@
+[submodule "self-managed-k8s-vagrant"]
+	path = self-managed-k8s-vagrant
+	url = https://github.com/secret-ta/self-managed-k8s-vagrant/
