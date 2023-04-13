@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: stand-with-dorayaki-be
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       labels:
