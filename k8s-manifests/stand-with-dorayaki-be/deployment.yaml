@@ -34,3 +34,4 @@ spec:
             items:
               - key: project-1-dorayaki-bucket-access.json
                 path: creds.json
+  revisionHistoryLimit: 0
