@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: stand-with-dorayaki-be
-          image: kadeksuryam/stand-with-dorayaki-be:v1
+          image: kadeksuryam/stand-with-dorayaki-be:v1.0.3
           envFrom:
             - secretRef:
                 name: swd-be-env
@@ -32,5 +32,5 @@ spec:
           secret:
             secretName: swd-be-gcloud-creds
             items:
-            - key: project-1-dorayaki-bucket-access.json
-              path: creds.json
+              - key: project-1-dorayaki-bucket-access.json
+                path: creds.json
