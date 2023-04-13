@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: stand-with-dorayaki-be
-          image: kadeksuryam/stand-with-dorayaki-be:v1.0.3
+          image: kadeksuryam/stand-with-dorayaki-be:v1.1.0
           envFrom:
             - secretRef:
                 name: swd-be-env
