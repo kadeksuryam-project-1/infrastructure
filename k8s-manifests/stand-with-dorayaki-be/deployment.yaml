@@ -27,6 +27,11 @@ spec:
               mountPath: /var/secrets/gcp-creds
           ports:
             - containerPort: 8080
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
       volumes:
         - name: gcp-creds
           secret:
