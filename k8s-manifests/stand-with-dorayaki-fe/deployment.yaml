@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: stand-with-dorayaki-fe
-          image: kadeksuryam/stand-with-dorayaki-fe:v1.0.1
+          image: kadeksuryam/stand-with-dorayaki-fe:v1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 80
